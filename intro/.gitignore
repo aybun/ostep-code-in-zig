@@ -1,0 +1,4 @@
+cpu mem threads io
+cpu.o mem.o threads.o io.o
+
+zig-out/
