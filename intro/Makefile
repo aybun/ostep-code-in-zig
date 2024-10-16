@@ -1,6 +1,6 @@
 
 clear:
-	rm -f cpu cpu.o mem mem.o
+	rm -f cpu cpu.o mem mem.o threads threads.o
 
 
 cpu:
@@ -10,4 +10,10 @@ cpu:
 mem:
 	zig build-exe mem.zig
 	rm -f mem.o
+
+threads:
+	zig build-exe threads.zig
+	rm -f threads.o
+
+
 
