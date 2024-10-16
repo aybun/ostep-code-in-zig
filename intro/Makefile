@@ -1,13 +1,12 @@
 
 all:
-	cpu
-	mem
-	threads
-	io
+	make cpu
+	make mem
+	make threads
+	make io
 
 clean:
 	rm -f cpu cpu.o mem mem.o threads threads.o io io.o
-
 
 cpu:
 	zig build-exe cpu.zig
@@ -24,5 +23,4 @@ threads:
 io:
 	zig build-exe io.zig
 	rm -f io.o
-
 
