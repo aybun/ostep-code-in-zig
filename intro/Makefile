@@ -1,6 +1,12 @@
 
-clear:
-	rm -f cpu cpu.o mem mem.o threads threads.o
+all:
+	cpu
+	mem
+	threads
+	io
+
+clean:
+	rm -f cpu cpu.o mem mem.o threads threads.o io io.o
 
 
 cpu:
@@ -15,5 +21,8 @@ threads:
 	zig build-exe threads.zig
 	rm -f threads.o
 
+io:
+	zig build-exe io.zig
+	rm -f io.o
 
 

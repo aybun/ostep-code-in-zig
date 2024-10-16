@@ -16,7 +16,7 @@
   
    @code bash
 
-   make clear
+   make clean
    
    @end
 
