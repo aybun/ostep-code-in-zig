@@ -2,6 +2,7 @@
 clean:
 	rm -f p1 p2 p3 p4
 	rm -f p1.o p2.o p3.o p4.o
+	rm -f p4.output output.txt
 
 
 p1:
