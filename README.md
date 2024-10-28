@@ -8,10 +8,6 @@ The code only works on linux. For windows, you need to run in WSL.
 
 # Dependencies
 ## Main
-- [zig](https://ziglang.org/).
+- [zig](https://ziglang.org/)
 - [make](https://www.gnu.org/software/make/)  
-
-## Optional
-- [neorg](https://github.com/nvim-neorg/neorg) : There will be notes with internal links written in the language of Neorg.
-
 
