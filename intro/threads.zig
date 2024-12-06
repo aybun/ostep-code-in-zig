@@ -1,15 +1,14 @@
-//We dont actually need common_threads.zig for intro?
-//
 const std = @import("std");
 
 var counter: i32 = 0; // shared
 var loops: i32 = 0;
 
-//fn worker(_args: *const u8) !void{
 fn worker() !void {
-    var i: i32 = 0;
-    while (i < loops) : (i += 1) {
-        counter += 1;
+    //https://ziglang.org/documentation/master/#volatile
+    //https://ziggit.dev/t/further-clarification-on-volatile/5671/11
+    const counter_ptr: *volatile i32 = &counter;
+    for (0..@intCast(loops)) |_| {
+        counter_ptr.* += 1;
     }
 }
 
