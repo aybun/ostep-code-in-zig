@@ -21,7 +21,7 @@ pub fn main() !void {
     //allocator
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
     const allocator = gpa.allocator();
-    defer _ = gpa.deinit();
+    // defer _ = gpa.deinit();
 
     //args allocation
     const args = try std.process.argsAlloc(allocator);
