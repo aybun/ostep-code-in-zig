@@ -8,6 +8,6 @@ The code only works on linux. For windows, you need to run in WSL.
 
 # Dependencies
 ## Main
-- [zig](https://ziglang.org/)
-- [make](https://www.gnu.org/software/make/)  
+- [zig](https://ziglang.org/) 0.13.0
+- [make](https://www.gnu.org/software/make/) 4.3
 
