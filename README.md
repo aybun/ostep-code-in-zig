@@ -3,7 +3,7 @@ This is an effort to translate [code](https://github.com/remzi-arpacidusseau/ost
 
 # Note
 This is a work-in-progress.
-The code only works on linux. For windows, you need to run in WSL.
+The code only works on linux. For windows, you need to run on WSL.
 
 
 # Dependencies
