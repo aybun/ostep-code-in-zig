@@ -1,17 +1,23 @@
 const std = @import("std");
 
-var num: i64 = 99;
+const proc_t = struct { pid: i32 };
+
+const thread_info_t = struct { proc_info: ?*proc_t };
+
+var p: proc_t = undefined;
+// var th: thread_info_t = undefined;
+var thd: *thread_info_t = undefined;
 
 fn thread_1() void {
     std.debug.print("t1 before check\n", .{});
 
-    if (num == 99) {
+    if (thd.*.proc_info != null) {
         std.debug.print("t1 after check\n", .{});
         std.time.sleep(2_000_000); // 2 seconds
 
         std.debug.print("t1 in use!\n", .{});
 
-        std.debug.print("num : {d}\n", .{num});
+        std.debug.print("{d}\n", .{thd.*.proc_info.?.*.pid});
     }
 }
 
@@ -21,7 +27,7 @@ fn thread_2() void {
     std.time.sleep(1_000_000); //try changing this to 5
 
     std.debug.print("t2 : set to 0\n", .{});
-    num = 0;
+    thd.*.proc_info = null;
 }
 
 pub fn main() !void {
@@ -29,6 +35,11 @@ pub fn main() !void {
         std.debug.print("usage: main\n", .{});
         return error.InvalidArgument;
     }
+
+    var t: thread_info_t = undefined;
+    p.pid = 100;
+    t.proc_info = &p;
+    thd = &t;
 
     std.debug.print("main: begin\n", .{});
     const t1 = try std.Thread.spawn(.{}, thread_1, .{});
