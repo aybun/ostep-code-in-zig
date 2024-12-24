@@ -26,7 +26,7 @@ fn thread_2() void {
 
     std.time.sleep(1_000_000); //try changing this to 5
 
-    std.debug.print("t2 : set to 0\n", .{});
+    std.debug.print("t2 : set to null\n", .{});
     thd.*.proc_info = null;
 }
 
