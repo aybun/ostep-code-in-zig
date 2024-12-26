@@ -17,7 +17,7 @@ fn thread_1() void {
 
     if (thd.*.proc_info != null) {
         std.debug.print("t1 after check\n", .{});
-        std.time.sleep(2_000_000); // 2 seconds
+        std.time.sleep(2 * std.time.ns_per_s); // 2 seconds
         std.debug.print("t1 in use!\n", .{});
         std.debug.print("{d}\n", .{thd.*.proc_info.?.*.pid});
     }
@@ -27,7 +27,7 @@ fn thread_1() void {
 
 fn thread_2() void {
     std.debug.print("t2 : begin\n", .{});
-    std.time.sleep(1_000_000); // change to 5 to make the code "work"...
+    std.time.sleep(1 * std.time.ns_per_s); // change to 5 to make the code "work"...
 
     proc_info_lock.lock();
 

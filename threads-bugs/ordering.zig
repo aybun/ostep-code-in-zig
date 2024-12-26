@@ -21,7 +21,7 @@ fn PR_CreateThread(comptime start_routine: fn () void) !*pr_thread_t {
     p.*.Tid = try std.Thread.spawn(.{}, start_routine, .{});
 
     // turn the sleep off to avoid the fault, sometimes...
-    std.time.sleep(1_000_000);
+    std.time.sleep(1 * std.time.ns_per_s);
     return p;
 }
 
