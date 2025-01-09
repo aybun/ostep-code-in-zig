@@ -1,5 +1,4 @@
 const std = @import("std");
-// const assert = std.debug.assert;
 
 //time in seconds
 //https://github.com/ziglang/zig/blob/master/lib/std/time.zig
