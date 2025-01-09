@@ -18,7 +18,7 @@ pub fn main() !void {
         exit(1);
     } else if (rc == 0) {
         print("hello, I am child (pid:{d})\n", .{getpid()});
-        sleep(1_000_000);
+        sleep(1 * std.time.ns_per_s);
     } else {
 
         //https://ratfactor.com/zig/forking-is-cool
