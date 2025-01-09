@@ -46,5 +46,5 @@ pub fn main() !void {
         &other_addrlen,
     );
 
-    print("client:: got reply [size:{d} contents:({s})]", .{ n_recv, buf[0..n_recv] });
+    print("client:: got reply [size:{d} contents:({s})]\n", .{ n_recv, buf[0..n_recv] });
 }
