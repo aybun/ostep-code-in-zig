@@ -7,7 +7,7 @@ var done: i64 = 0;
 
 fn child() !void {
     print("child\n", .{});
-    std.time.sleep(1_000_000);
+    std.time.sleep(1 * std.time.ns_per_s);
     m.lock();
     done = 1;
     c.signal();
